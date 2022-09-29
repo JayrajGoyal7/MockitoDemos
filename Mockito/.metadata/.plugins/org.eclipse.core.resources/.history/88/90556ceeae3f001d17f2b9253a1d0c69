@@ -1,0 +1,16 @@
+package com.in28minutes.business;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ListTest {
+
+	@Test
+	public void test() {
+		
+	
+	
+	}
+
+}

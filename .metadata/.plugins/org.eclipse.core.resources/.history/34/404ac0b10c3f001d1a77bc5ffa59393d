@@ -1,0 +1,24 @@
+package com.example.Junit.helper;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StringHelperTest {
+
+	@Test
+	public void test() {
+		StringHelper helper = new StringHelper();
+		//AACD => CD , ACD => CD , EECD => EECD , CDAA => CDAA.
+		String s4 = helper.truncateAInFirst2Positions("CDAA");
+		
+		
+		
+		assertEquals(helper.truncateAInFirst2Positions("AACD"), "CD");
+		assertEquals(helper.truncateAInFirst2Positions("ACD"), "CD");
+		assertEquals(helper.truncateAInFirst2Positions("EECD"), "EECD");
+		assertEquals(s4, "CDAA");
+		
+	}
+
+}

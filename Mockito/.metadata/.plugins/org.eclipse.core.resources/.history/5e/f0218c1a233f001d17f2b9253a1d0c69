@@ -1,0 +1,19 @@
+package com.in28minutes.business;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.example.business.TodoBusinessImpl;
+
+public class TodoBusinessImplStubTest {
+
+	@Test
+	public void test() {
+		
+		
+		TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoService);
+		
+	}
+
+}

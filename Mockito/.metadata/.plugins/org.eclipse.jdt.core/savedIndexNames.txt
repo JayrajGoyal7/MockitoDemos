@@ -1,0 +1,9 @@
+INDEX VERSION 1.131+C:\Users\150228\eclipse-workspace\JUnit\Mockito\.metadata\.plugins\org.eclipse.jdt.core
+3578002972.index
+209676952.index
+1865797976.index
+1964566302.index
+2542134337.index
+1711549941.index
+3011209426.index
+3817677825.index

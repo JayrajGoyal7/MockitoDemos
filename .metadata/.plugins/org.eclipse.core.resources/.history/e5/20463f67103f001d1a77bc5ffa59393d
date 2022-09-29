@@ -1,0 +1,34 @@
+package com.example.Junit.helper;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StringHelperTest {
+
+	@Test
+	public void testTruncateAInFirst2Positions() {
+		StringHelper helper = new StringHelper();
+		//AACD => CD , ACD => CD , EECD => EECD , CDAA => CDAA.
+		assertEquals("CD",helper.truncateAInFirst2Positions("AACD"));
+		assertEquals("CD",helper.truncateAInFirst2Positions("ACD"));
+	
+		
+	}
+	@Test 
+	public void Test2() {
+		StringHelper helper = new StringHelper();
+		assertEquals("EECD",helper.truncateAInFirst2Positions("EECD"));
+		assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
+		
+	}
+	
+	
+	@Test
+	public void Test3() {
+		// ABAB=> true, ABCD => false , ABA => false , AB => true, ABCBA =>true
+		StringHelper helper = new StringHelper();
+		boolean bool1 = helper.areFirstAndLastTwoCharactersTheSame("ABAB");
+	}
+
+}

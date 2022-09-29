@@ -1,0 +1,8 @@
+package com.example.business;
+
+import com.example.data.api.TodoService;
+
+public class TodoBusinessImpl {
+
+	private TodoService todoService;
+}

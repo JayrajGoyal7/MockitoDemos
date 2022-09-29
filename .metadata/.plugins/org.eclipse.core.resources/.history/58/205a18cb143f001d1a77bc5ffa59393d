@@ -1,0 +1,19 @@
+package com.example.Junit.helper;
+
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+
+import org.junit.Test;
+
+public class ArraysTest {
+
+	@Test
+	public void test() {
+		
+		int[] arr1 = {12,23,43,1,11,8,65,34};
+		int[] arr1 = {12,23,43,1,11,8,65,34};
+		Arrays.sort(arr1);
+	}
+
+}

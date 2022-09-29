@@ -1,0 +1,15 @@
+package com.example.Junit.helper;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StringHelperTest {
+
+	@Test
+	public void test() {
+		assertEquals("ABCD", "ABC");
+	}
+	// org.junit.ComparisonFailure: expected:<ABC[D]> but was:<ABC[]>
+
+}

@@ -1,0 +1,109 @@
+package com.example.Junit.helper;
+
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+import java.util.Collection;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+
+
+@RunWith(Parameterized.class)
+public class StringHelperParameterizedTest {
+
+	
+	private String input;
+	private String expectedOutput;
+	
+	public StringHelperParameterizedTest(String input, String expectedOutput) {
+		input = this.input;
+		expectedOutput = this.expectedOutput;
+	}
+	
+	
+	@Parameters
+	public static Collection<String[]> testCondition() {
+		
+		String[][] expectedOutputs = {
+				{"AACD","CD"},
+				{"ACD","CD"},
+				{"EECD","EECD"},
+				{"CDAA","CDAA"}
+				};
+		
+		return Arrays.asList(expectedOutputs);
+	}
+	
+	
+	@Test
+	public void testTruncateAInFirst2Positions() {
+		StringHelper helper = new StringHelper();
+		//AACD => CD , ACD => CD , EECD => EECD , CDAA => CDAA.
+		assertEquals(expectedOutput,helper.truncateAInFirst2Positions(input));
+		assertEquals(expectedOutput,helper.truncateAInFirst2Positions(input));
+	}
+	
+	@Test 
+	public void Test2() {
+		StringHelper helper = new StringHelper();
+		assertEquals(expectedOutput,helper.truncateAInFirst2Positions(input));
+		assertEquals(expectedOutput, helper.truncateAInFirst2Positions(input));
+		
+	}
+	
+	@Test
+	public void Test3() {
+		// ABAB=> true, ABCD => false , ABA => false , AB => true, ABCBA =>true
+		StringHelper helper = new StringHelper();
+		assertEquals(helper.areFirstAndLastTwoCharactersTheSame("ABAB"), true);
+	}
+	
+	@Test
+	public void Test4() {
+		// ABAB=> true, ABCD => false , ABA => false , AB => true, ABCBA =>true
+		StringHelper helper = new StringHelper();
+		assertEquals(helper.areFirstAndLastTwoCharactersTheSame("ABCD"), false);
+	}
+	
+	@Test
+	public void Test5() {
+		// ABAB=> true, ABCD => false , ABA => false , AB => true, ABCBA =>true
+		StringHelper helper = new StringHelper();
+		assertFalse(helper.areFirstAndLastTwoCharactersTheSame("ABA"));
+	}
+	
+	@Test
+	public void Test6() {
+		// ABAB=> true, ABCD => false , ABA => false , AB => true, ABCBA =>true
+		StringHelper helper = new StringHelper();
+		assertEquals(helper.areFirstAndLastTwoCharactersTheSame("AB"), true);
+	}
+	
+	@Test
+	public void Test7() {
+		// ABAB=> true, ABCD => false , ABA => false , AB => true, ABCBA =>true
+		StringHelper helper = new StringHelper();
+		assertEquals(helper.areFirstAndLastTwoCharactersTheSame("ABCAB"), true);
+	}
+	
+	@Test
+	public void Test8() {
+		// ABAB=> true, ABCD => false , ABA => false , AB => true, ABCBA =>true
+		StringHelper helper = new StringHelper();
+		assertFalse(helper.areFirstAndLastTwoCharactersTheSame("ABCBA"));
+	}
+	
+	@Test
+	public void Test9() {
+		// ABAB=> true, ABCD => false , ABA => false , AB => true, ABCBA =>true
+		StringHelper helper = new StringHelper();
+		assertFalse(helper.areFirstAndLastTwoCharactersTheSame("A"));
+		
+		//this will always fail the test.
+//		assertFalse("This Condition failed.",true);
+	}
+
+}
